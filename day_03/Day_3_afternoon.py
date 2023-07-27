@@ -40,12 +40,14 @@ print(data_arr)
 TODO: Writing and reading numpy file
 """
 # Save the data_arr variable into a .npy file
-
+np.save('Test_thing.npy',data_arr)
 
 # Load data from a .npy file
+a = np.load('Test_thing.npy')
 
 
 # Verify that the loaded data matches the initial data
+print(np.equal(data_arr,a))
 
 #%%
 """
@@ -56,11 +58,19 @@ data_arr2 = np.random.randn(8,1)
 print(data_arr2)
 
 # Save the data_arr and data_arr2 variables into a .npz file
+np.savez('Test_thing_zipped',data_arr2,a)
 
 # Load the numpy zip file
-
+b = np.load('Test_thing_zipped.npz')
 # Verify that the loaded data matches the initial data
+print('Variable names within this file:', sorted(b.files))
 
+# We will then be able to use the variable name as a key to access the data.
+print(b['arr_0'])
+
+# Verification that the loaded data matches the initial data exactly
+print((data_arr==b['arr_0']).all())
+print((data_arr2==b['arr_1']).all())
 #%%
 """
 Error and exception
