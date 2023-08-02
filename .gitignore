@@ -3,3 +3,7 @@
 *.jpg
 Data_Day2
 .ipynb_checkpoints
+*.pdf
+*.zip
+*.csv
+
