@@ -6,4 +6,6 @@ Data_Day2
 *.pdf
 *.zip
 *.csv
-
+*.mat
+*.npz
+*.npy
