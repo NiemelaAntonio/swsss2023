@@ -4,7 +4,7 @@ from math import factorial
 
 
 def cos_approx(x,order):
-    return sum((-1)**n * x**(2*n)/(2*factorial(n)) for n in range(order+1))
+    return np.sum((-1)**n * x**(2*n)/(2*factorial(n)) for n in range(order+1))
 
 a = 3.14/3
 order = 10
